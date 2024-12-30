@@ -1,0 +1,7 @@
+[libraries]
+benchmark = { module = "org.jetbrains.kotlinx:kotlinx-benchmark-runtime", version = "0.4.13"}
+junit-params = { module = "org.junit.jupiter:junit-jupiter-params", version = "5.11.4"}
+
+[plugins]
+benchmark = { id = "org.jetbrains.kotlinx.benchmark", version = "0.4.13" }
+kotlin = { id = "org.jetbrains.kotlin.jvm", version = "2.0.20" }

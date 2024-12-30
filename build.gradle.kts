@@ -1,5 +1,6 @@
 plugins {
-    kotlin("jvm") version "1.9.23"
+    alias(libs.plugins.kotlin)
+    alias(libs.plugins.benchmark)
 }
 
 group = "xyz.qwexter"
@@ -10,7 +11,13 @@ repositories {
 }
 
 dependencies {
+    implementation(libs.benchmark)
     testImplementation(kotlin("test"))
+    testImplementation(libs.junit.params)
+}
+
+sourceSets {
+    create("benchmark")
 }
 
 tasks.test {
@@ -18,4 +25,14 @@ tasks.test {
 }
 kotlin {
     jvmToolchain(11)
+    target {
+        compilations.getByName("benchmark")
+            .associateWith(compilations.getByName("main"))
+    }
+}
+
+benchmark {
+    targets {
+        register("benchmark")
+    }
 }
