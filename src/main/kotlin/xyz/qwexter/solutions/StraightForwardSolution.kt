@@ -68,7 +68,7 @@ object StraightForwardSolution {
         }
     }
 
-    private fun Long.numberOfDigits(): Int {
+    fun Long.numberOfDigits(): Int {
         var n = this
         var count = 0
         do {

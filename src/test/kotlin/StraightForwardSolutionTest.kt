@@ -4,6 +4,8 @@ import org.junit.jupiter.params.provider.Arguments
 import org.junit.jupiter.params.provider.Arguments.arguments
 import org.junit.jupiter.params.provider.FieldSource
 import xyz.qwexter.solutions.StraightForwardSolution
+import xyz.qwexter.xyz.qwexter.solutions.BFSSolution
+import xyz.qwexter.xyz.qwexter.solutions.DFSSolution
 
 class StraightForwardSolutionTest {
 
@@ -46,11 +48,15 @@ class StraightForwardSolutionTest {
             arguments(2404L, listOf(24L, 4L))
         )
 
+
+
         @JvmStatic
         private val testImpl = listOf(
             arguments(StraightForwardSolution::calculateCount),
             arguments(StraightForwardSolution::calculateCountOpt1),
-            arguments(StraightForwardSolution::calculateCountOpt2)
+            arguments(StraightForwardSolution::calculateCountOpt2),
+            arguments(BFSSolution::bfsCount),
+            arguments(DFSSolution::dfsCount)
         )
 
     }

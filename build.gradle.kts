@@ -14,6 +14,7 @@ dependencies {
     implementation(libs.benchmark)
     testImplementation(kotlin("test"))
     testImplementation(libs.junit.params)
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.8.1")
 }
 
 sourceSets {
